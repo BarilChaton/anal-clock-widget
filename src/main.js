@@ -11,8 +11,8 @@ let mainWindow
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
     frame: false,
     transparent: true,
     alwaysOnTop: true,

@@ -8,12 +8,11 @@ import SecondHand from './hands/secondHand'
 import Display from './timeDisplay/display'
 
 const ClockWrapper = () => {
-  const [ time, setTime ] = useState(new Date())
-  const [accumulatedSeconds, setAccumulatedSeconds] = useState(time.getSeconds() + time.getMilliseconds() / 1000)
+  const [ currentDate, setCurrentDate ] = useState(new Date())
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date())
+      setCurrentDate(new Date())
     }, 1000)
 
     return () => {
@@ -21,19 +20,7 @@ const ClockWrapper = () => {
     }
   }, [])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newAccumulatedSeconds = accumulatedSeconds + 1
-      setAccumulatedSeconds(newAccumulatedSeconds)
-    }, 1000)
-
-    return () => {
-      clearInterval(interval)
-    };
-  }, [accumulatedSeconds])
-
-  // Dla kalkulacji czasu i animowania tla.
-  const sysHours = time.getHours()
+  const sysHours = currentDate.getHours()
   const gradientXPosition = calculateGradientPosition(sysHours)
   const startColor = calculateStartColor(sysHours)
   const endColor = calculateEndColor(sysHours)
@@ -47,9 +34,9 @@ const ClockWrapper = () => {
           '--end-color': endColor }}
         >
           <Display />
-          <HourHand {...{ time }}/>
-          <MinuteHand {...{ time }}/>
-          <SecondHand {...{ accumulatedSeconds }}/>
+          <HourHand {...{ currentDate }}/>
+          <MinuteHand {...{ currentDate }}/>
+          <SecondHand {...{ currentDate }}/>
         <div className='dot'></div>
       </div>
     </div>

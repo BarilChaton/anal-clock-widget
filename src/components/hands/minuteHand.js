@@ -1,7 +1,9 @@
 import React from 'react'
 
-const MinuteHand = ({ time }) => {
-  const minutesDeg = time.getMinutes() * 6
+const MinuteHand = ({ currentDate }) => {
+  const minutes = currentDate.getMinutes() + currentDate.getSeconds() / 60
+  const minutesDeg = (minutes / 60) * 360
+  console.log(minutesDeg);
 
   return (
     <div

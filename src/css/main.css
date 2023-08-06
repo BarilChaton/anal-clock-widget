@@ -16,9 +16,12 @@
 }
 
 .widget-container {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clock-face {
@@ -26,6 +29,8 @@
   width: 190px;
   height: 190px;
   border-radius: 50%;
+  outline: solid 2px #ffffff;
+  outline-offset: 4px;
   
   background: radial-gradient(circle at var(--gradient-x-position), var(--start-color), var(--end-color));
   animation: gradientTransition 86,400s infinite alternate;
@@ -34,7 +39,7 @@
 .hand {
   position: absolute;
   transform-origin: bottom center;
-  transition: transform 0.5s cubic-bezier(0.4, 2.15, 0.2, 1);
+  /* transition: transform 0.5s cubic-bezier(0.4, 2.15, 0.2, 1); */
   border-radius: 50% 50% 0% 0%;
 }
 
@@ -42,7 +47,7 @@
   width: 7px;
   height: 55px;
   top: 40px;
-  left: 91.5px;
+  left: 91px;
   background-color: #666666;
   box-shadow: -1px 3px 2px 2px rgba(0, 0, 0, 0.2);
 }
@@ -51,7 +56,7 @@
   width: 5px;
   height: 75px;
   top: 20px;
-  left: 92.5px;
+  left: 92px;
   background-color: #fd4857;
   box-shadow: -2px 3px 2px 2px rgba(0, 0, 0, 0.2);
 }
@@ -60,7 +65,7 @@
   width: 3px;
   height: 80px;
   top: 15px;
-  left: 93.5px;
+  left: 93px;
   background-color: #ff0000;
   border-radius: 100% 100% 0% 0%;
   box-shadow: -2.5px 3px 2px 2px rgba(0, 0, 0, 0.2);
@@ -78,15 +83,15 @@
 
 .display-container {
   position: absolute;
-  width: 95px;
-  height: 22.5px;
+  width: 65px;
+  height: 12.5px;
   padding: 5px;
-  top: 119.5px;
-  left: 41.5px;
-  border: solid 2px;
-  border-color: #000000;
-  background-color: #505237;
-  border-radius: 7.5px;
+  top: 150px;
+  left: 58px;
+  outline: solid 2px #ffffff;
+  outline-offset: 2px;
+  background-color: #c5c5c5;
+  border-radius: 50%;
 }
 
 .digits {
@@ -94,7 +99,7 @@
   bottom: 4px;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
   letter-spacing: 2px;
 }
 

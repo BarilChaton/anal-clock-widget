@@ -1,7 +1,8 @@
 import React from 'react'
 
-const SecondHand = ({ accumulatedSeconds }) => {
-  const secondsDeg = (accumulatedSeconds / 60) * 360
+const SecondHand = ({ currentDate }) => {
+  const seconds = currentDate.getSeconds() + currentDate.getMilliseconds() / 1000
+  const secondsDeg = (seconds / 60) * 360
 
   return (
     <div

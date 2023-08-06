@@ -15,7 +15,7 @@ const Display = () => {
   }, [])
 
   useEffect(() => {
-    const formattedTime = new Intl.DateTimeFormat('en-US', {
+    const formattedTime = new Intl.DateTimeFormat('en-GB', {
       hour: '2-digit',
       minute: '2-digit'
     }).format(time)

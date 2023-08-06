@@ -1,7 +1,8 @@
 import React from 'react'
 
-const HourHand = ({ time }) => {
-  const hoursDeg = (time.getHours() % 12) * 30 + time.getMinutes() * 0.5
+const HourHand = ({ currentDate }) => {
+  const hours = currentDate.getHours() + currentDate.getMinutes() / 60
+  const hoursDeg = (hours / 12) * 360
 
   return (
     <div 
